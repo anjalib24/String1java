@@ -1,0 +1,38 @@
+In Java, a `String` is a class used to represent a sequence of characters. It is one of the most commonly used classes in Java and is part of the `java.lang` package.
+
+Here are some key points about `String` in Java:
+
+1. **Immutable**: Once a `String` object is created, its value cannot be changed. If you modify a `String`, a new `String` object is created.
+
+2. **Creation**: You can create a `String` using string literals or by using the `new` keyword.
+   ```java
+   String str1 = "Hello, World!"; // Using string literal
+   String str2 = new String("Hello, World!"); // Using new keyword
+   ```
+
+3. **Methods**: The `String` class provides many useful methods such as `length()`, `charAt(int index)`, `substring(int beginIndex, int endIndex)`, `toUpperCase()`, `toLowerCase()`, and many more.
+
+4. **String Pool**: Java maintains a pool of strings to save memory. When you create a string literal, Java checks if the same string already exists in the pool. If it does, it returns the reference to the existing string rather than creating a new one.
+
+5. **Concatenation**: You can concatenate strings using the `+` operator or the `concat()` method.
+   ```java
+   String str1 = "Hello";
+   String str2 = "World";
+   String result = str1 + " " + str2; // Using + operator
+   ```
+
+6. **Comparison**: Use the `equals()` method to compare the contents of two strings and `==` to compare their references.
+
+Here’s a simple example:
+```java
+public class Main {
+    public static void main(String[] args) {
+        String greeting = "Hello, World!";
+        System.out.println("Length of string: " + greeting.length());
+        System.out.println("First character: " + greeting.charAt(0));
+        System.out.println("Substring: " + greeting.substring(0, 5));
+    }
+}
+```
+
+Let me know if you have any specific questions about `String` or need more examples!

@@ -1,0 +1,43 @@
+In programming, **mutable** and **immutable** refer to whether or not an object's state (its data) can be changed after it is created.
+
+### Mutable Objects
+
+- **Mutable Objects**: These objects can have their state or data changed after they are created. This means that you can modify the contents of the object without creating a new instance.
+
+  **Example in Java**:
+  ```java
+  StringBuilder sb = new StringBuilder("Hello");
+  sb.append(", World!");  // Modifying the existing object
+  System.out.println(sb.toString());  // Output: "Hello, World!"
+  ```
+
+  In this example, `StringBuilder` is mutable. You can change its content by appending text, and it doesn't require creating a new object.
+
+### Immutable Objects
+
+- **Immutable Objects**: These objects cannot be modified once they are created. Any operation that appears to modify the object will actually create a new instance of the object with the updated state.
+
+  **Example in Java**:
+  ```java
+  String s = "Hello";
+  String newString = s.concat(", World!");  // Creates a new String object
+  System.out.println(s);          // Output: "Hello"
+  System.out.println(newString);  // Output: "Hello, World!"
+  ```
+
+  In this example, `String` is immutable. The original string `s` remains unchanged after concatenation. The `concat` method returns a new `String` object with the modified value.
+
+### Why Immutability?
+
+1. **Thread Safety**: Immutable objects are inherently thread-safe because their state cannot be changed after creation. This makes them useful in concurrent programming.
+
+2. **Predictability**: Immutability simplifies reasoning about code since objects can't change state unexpectedly.
+
+3. **Hashing and Caching**: Immutable objects can be safely cached and reused, as their state doesn't change. For example, `String` objects are often cached in the string pool.
+
+### Mutable vs. Immutable
+
+- **Mutable**: Allows modifications, often provides methods to change state (e.g., `StringBuilder`, `ArrayList`).
+- **Immutable**: Does not allow modifications after creation, typically provides methods that return new instances (e.g., `String`, `LocalDate`).
+
+Understanding the difference helps in choosing the right type of object based on your needs for mutability and performance.

@@ -1,0 +1,47 @@
+In Java, a `String` is a class, not a primitive type. It represents a sequence of characters and is a part of the `java.lang` package. 
+
+Here’s a breakdown of how `String` works in Java:
+
+1. **Class, Not Primitive**: Unlike primitive types such as `int` or `char`, `String` is a reference type. This means it refers to an object in memory rather than holding the actual data directly.
+
+2. **Immutability**: Strings in Java are immutable. Once a `String` object is created, its value cannot be changed. Any operation that seems to modify a `String` will actually create a new `String` object.
+
+3. **String Pool**: Java uses a special memory area called the "string pool" to manage `String` objects efficiently. When you create a string literal, Java checks the pool first to see if the string already exists. If it does, it reuses the existing instance; otherwise, it creates a new instance and adds it to the pool.
+
+4. **Common Methods**:
+   - `length()`: Returns the length of the string.
+   - `charAt(int index)`: Returns the character at the specified index.
+   - `substring(int beginIndex, int endIndex)`: Returns a substring from the specified begin index to the end index.
+   - `toUpperCase()`, `toLowerCase()`: Converts the string to upper or lower case.
+   - `trim()`: Removes leading and trailing whitespace.
+
+5. **String Literals vs. `new String()`**:
+   - **String Literals**: `"Hello"` creates a string literal. Java optimizes these by using the string pool.
+   - **Using `new String()`**: `new String("Hello")` creates a new `String` object in heap memory, bypassing the string pool.
+
+Here’s an example that demonstrates some of these points:
+
+```java
+public class StringExample {
+    public static void main(String[] args) {
+        // String literal
+        String str1 = "Hello, World!";
+        
+        // Creating a new String object
+        String str2 = new String("Hello, World!");
+        
+        // Checking if both strings refer to the same object in the pool
+        System.out.println(str1 == str2); // Prints false
+
+        // Checking if both strings have the same content
+        System.out.println(str1.equals(str2)); // Prints true
+
+        // Using String methods
+        System.out.println("Length: " + str1.length());
+        System.out.println("First character: " + str1.charAt(0));
+        System.out.println("Substring: " + str1.substring(0, 5));
+    }
+}
+```
+
+If you have more specific questions about `String` or need further clarification, feel free to ask!
